@@ -1,0 +1,72 @@
+<h2>HOME</h2>
+<p style="font-size: large ; font-family: Verdana, Geneva, Tahoma, sans-serif;  color: rgb(17, 0, 255);">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat nesciunt sit officia recusandae corrupti nostrum quis, doloremque molestias odio quidem atque tempore ipsam porro deserunt! Sapiente nesciunt illo totam temporibus.</p>
+<p><img [src]="'./assets/image/' + sourceImage" width="800" class="img-fluid" alt="" (click)="console(sourceImage)"></p>
+
+<!--(mouseover)="changeRandom()" -->
+
+<p [ngStyle]="{'color' : valcolor}" (click)="valcolor='green';" [ngStyle]=valsize>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur eum sit debitis vitae fuga iure fugiat et. Dolorem hic nemo impedit nam at, iste error enim ipsam? Magni, nostrum facere!</p>
+
+<p [ngStyle]="varObjet">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur eum sit debitis vitae fuga iure fugiat et. Dolorem hic nemo impedit nam at, iste error enim ipsam? Magni, nostrum facere!</p>
+
+<div class="row mt-3">
+
+    <h3>Dynamic class using [ngClass]</h3>
+    <button class="btn-success fs-5" (click)="displayParag=!displayParag">change the parag display condition</button>
+
+    <p [ngClass]="{'text-primary': textPrimary}" (click)="textPrimary=!textPrimary" [ngStyle]=valsize>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis culpa itaque sint incidunt, quasi labore est ipsum earum enim laborum illum quisquam necessitatibus architecto consectetur perferendis obcaecati dolorem! Doloremque, itaque.</p>
+
+</div>
+
+<!--------------*ngIf----------------------------->
+
+<div class="row mt-3">
+    <h3>Dynamic display *ngIf</h3>
+    <button class="btn-warning fs-5" (click)="displayParag=!displayParag">change the parag display condition</button>
+
+    <p *ngIf="displayParag; else otherParag" [ngStyle]=valsize>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis culpa itaque sint incidunt, quasi labore est ipsum earum enim laborum illum quisquam necessitatibus architecto consectetur perferendis obcaecati dolorem! Doloremque, itaque.</p>
+
+    <ng-template #otherParag>
+        <p [ngStyle]=valsize>Ceci est un autre paragraphe ...</p>
+    </ng-template>
+
+    <!--------------*ngSwitch----------------------------->
+
+</div>
+<div class="row mt-3">
+    <h3>Dynamic display [ngSwitch] *ngSwitchCase</h3>
+    <button class="btn-primary fs-5" (click)="incSwitch()">Click to switch</button>
+    <div [ngSwitch]="displaySwitch">
+        <p *ngSwitchCase="1">Parag 1</p>
+        <p *ngSwitchCase="2">Parag 2</p>
+        <p *ngSwitchCase="3">Parag 3</p>
+    </div>
+
+</div>
+
+<!--------------*ngFor----------------------------->
+
+<div class="row mt-3">
+    <h3>Dynamic display *ngFor</h3>
+
+    <ul>
+        <li *ngFor="let line of arrayImages">Line for {{line}} <br>
+            <img [src]="'./assets/image/' + line" width="100" />
+        </li>
+    </ul>
+
+</div>
+
+<!---------ngFor on Json Data---------------->
+
+<div class="row mt-3">
+    <h3>Dynamic display *ngFor on json data</h3>
+
+    <ul class="row">
+
+        <li class="col list-unstyled" *ngFor="let img of jsonImages">Line for {{img.title}} <br>
+            <img [src]="'./assets/image/' + img.url" width="100" /> <br>
+            <span>{{img.author}}</span>
+        </li>
+    </ul>
+
+</div>
