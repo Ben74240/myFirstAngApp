@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+    <div class="card" style="width: 18rem;">
+        <img [src]="'https://picsum.photos/id/' + idPhoto +'/1200'" class="img-fluid" />
+        <div class="card-body">
+            <h5 class="card-title">This image got ID</h5>
+            <h6>{{infoPhoto.author}}</h6>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+            </ul>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button class="btn btn-primary " (click)="goBackToGallery()">Back to Gallery</button>
+        </div>
+    </div>
+</div>
